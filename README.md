@@ -16,5 +16,6 @@ Current ideas:
 
 - cases: not hearable, too long, timer, sequence
 - conclusions;
+- comment creator for Jira;
 
 Output to a separate file.
