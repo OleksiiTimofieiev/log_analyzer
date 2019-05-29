@@ -12,7 +12,10 @@ Current ideas:
 - statistics
 - testing scenarious
 
-- use QT 
+- use QT => viewmodel table
+
+- filters for the table contents
+- color filter
 
 - cases: not hearable, too long, timer, sequence
 - conclusions;
