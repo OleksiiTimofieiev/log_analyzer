@@ -19,6 +19,7 @@ Current ideas:
 
 - cases: not hearable, too long, timer, sequence
 - conclusions;
-- comment creator for Jira;
+- comment creator for Jira => selcting the logs and writing them to file;
+- maybe to have a list of comment emplates;
 
 Output to a separate file.
