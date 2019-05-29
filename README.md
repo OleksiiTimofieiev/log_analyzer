@@ -14,4 +14,7 @@ Current ideas:
 
 - use QT 
 
+- cases: not hearable, too long, timer, sequence
+- conclusions;
+
 Output to a separate file.
