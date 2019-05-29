@@ -7,5 +7,11 @@ Current ideas:
 - show interested set of strings;
 - show only AudioFu
 - show lines with criteria;
+- archive
+- knowledge base
+- statistics
+- testing scenarious
+
+- use QT 
 
 Output to a separate file.
