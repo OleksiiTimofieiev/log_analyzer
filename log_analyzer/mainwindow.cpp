@@ -24,10 +24,20 @@ void    readFile(QString filename)
        QString line = in.readLine();
 //       qDebug() << line;
 
+//       QStringList x;
+//       QString line = in.readLine();
+//               while (!line.isNull()) {
+//                   QRegExp sep("\\s*/*");
+
+//                   x =  line.split(sep);
+//       QRegExp sep("(\\s+|/)");
+
+//       then x will have every number. => regex to spaces withot [ AUDIOFU situation]
+
        QStringList pieces = line.split( " " );
        QString neededWord = pieces.value( 0 );
 
-       qDebug()<< neededWord;
+       qDebug() << neededWord;
     }
 
     mFile.close();
