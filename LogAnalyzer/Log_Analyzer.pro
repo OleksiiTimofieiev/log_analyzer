@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-06-09T13:22:00
+# Project created by QtCreator 2019-07-28T13:23:49
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = log_analyzer
+TARGET = Log_Analyzer
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
