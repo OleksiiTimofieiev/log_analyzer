@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "cfileoperations.h"
+#include "CFileOperations.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,6 +19,4 @@ void MainWindow::on_pushButton_clicked()
     CFileOperations fileOperations("All files (*.*);; Log_file (*.dlt)");
 
     fileOperations.selectFilesForAnalysis();
-
-
 }

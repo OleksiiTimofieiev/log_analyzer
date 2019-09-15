@@ -25,12 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        cfileoperations.cpp \
+        CFileOperations.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
-        cfileoperations.h \
+        CFileOperations.h \
         mainwindow.h
 
 FORMS += \

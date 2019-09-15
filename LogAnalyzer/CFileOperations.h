@@ -9,11 +9,11 @@ class CFileOperations
 {
     public:
         CFileOperations(const QString & filter);
-        virtual ~CFileOperations();
+        virtual     ~CFileOperations();
     public:
-        void    selectFilesForAnalysis(void);
+        void        selectFilesForAnalysis(void);
     private:
-        QString mFilter;
+        QString     mFilter;
         QStringList mFilenames;
 };
 
