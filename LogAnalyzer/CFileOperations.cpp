@@ -17,16 +17,16 @@ QString    CFileOperations::selectFileForAnalysis(void)
     return filename;
 }
 
-void CFileOperations::readFromFile(CDataContainer & dataContainer)
+void CFileOperations::readFromFile(CDataContainer & dataContainer, bool & fileWasLoaded)
 {
     QString selectedFileName = selectFileForAnalysis();
-
-    QMessageBox::information(nullptr, "Status", "Started loading the file.");
 
     QFile inputFile(selectedFileName);
 
     if (inputFile.open(QIODevice::ReadOnly))
     {
+       QMessageBox::information(nullptr, "Status", "Started loading the file.");
+
        QTextStream in(&inputFile);
        dataContainer.onNewFile();
 
@@ -37,5 +37,6 @@ void CFileOperations::readFromFile(CDataContainer & dataContainer)
        }
 
        inputFile.close();
+       fileWasLoaded = true;
     }
 }

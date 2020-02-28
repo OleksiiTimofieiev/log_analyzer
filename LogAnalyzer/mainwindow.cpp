@@ -18,11 +18,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_actionOpen_triggered()
 {
     static CFileOperations fileOperations("All files (*.*)"); //All files (*.*);; Log_file (*.dlt)
+    bool    fileWasLoaded;
 
-    QMessageBox::information(nullptr, "Status", "Please, select the file.");
-    fileOperations.readFromFile(dataContainerObserver);
-    QMessageBox::information(this, tr("Status"), tr("Loaded the file."));
+    fileOperations.readFromFile(dataContainerObserver, fileWasLoaded);
+    (fileWasLoaded) ? QMessageBox::information(nullptr, tr("Status"), tr("Loaded the file.")) : QMessageBox::information(nullptr, tr("Status"), tr("File was not selected."));
+    dataContainerObserver.printData();
 }

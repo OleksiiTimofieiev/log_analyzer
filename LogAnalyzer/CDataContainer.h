@@ -11,6 +11,7 @@ public:
 public:
     void    onLineReceived(const QString & lineFromFile);
     void    onNewFile(void);
+    void    printData(void);
 private:
     QList<QString> dataReadFromFile;
 };

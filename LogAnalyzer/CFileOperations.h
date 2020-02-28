@@ -15,7 +15,7 @@ class CFileOperations
         virtual     ~CFileOperations();
     public:
         QString        selectFileForAnalysis(void);
-        void           readFromFile(CDataContainer & dataContainer);
+        void           readFromFile(CDataContainer & dataContainer, bool &fileWasLoaded);
     private:
         QString     mFilter;
 };

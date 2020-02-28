@@ -15,3 +15,11 @@ void CDataContainer::onNewFile()
         dataReadFromFile.clear();
     }
 }
+
+void CDataContainer::printData()
+{
+    for (auto & el : dataReadFromFile)
+    {
+        qDebug() << el;
+    }
+}
