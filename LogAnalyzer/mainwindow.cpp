@@ -18,7 +18,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_actionOpen_triggered()
 {
     static CFileOperations fileOperations("All files (*.*)"); //All files (*.*);; Log_file (*.dlt)
