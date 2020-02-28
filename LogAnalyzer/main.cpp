@@ -3,8 +3,8 @@
 
 #include "CFileOperations.h"
 
-// idea: to have during the initialization of the data: the types of filters, rows/cols(defined);
-// try catch handling of the unavailable file, etc.
+// idea: to have during the initialization of the data: the types of filters, rows/cols(defined), default folder to open;
+// create the file
 
 int main(int argc, char *argv[])
 {
