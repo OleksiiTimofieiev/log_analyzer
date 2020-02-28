@@ -1,10 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "CFileOperations.h"
 
-MainWindow::MainWindow(QWidget *parent) :
+#include <iostream>
+#include <QDebug>
+#include <QThread>
+
+MainWindow::MainWindow(CDataContainer & container, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    dataContainerObserver(container)
 {
     ui->setupUi(this);
 }
@@ -16,7 +20,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    CFileOperations fileOperations("All files (*.*);; Log_file (*.dlt)");
+    static CFileOperations fileOperations("All files (*.*)"); //All files (*.*);; Log_file (*.dlt)
 
-    fileOperations.selectFilesForAnalysis();
+    QMessageBox::information(nullptr, "Status", "Please, select the file.");
+    fileOperations.readFromFile(dataContainerObserver);
+    QMessageBox::information(this, tr("Status"), tr("Loaded the file."));
 }

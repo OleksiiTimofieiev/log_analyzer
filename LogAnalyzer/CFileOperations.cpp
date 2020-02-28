@@ -1,23 +1,41 @@
 #include "CFileOperations.h"
+#include <QMessageBox>
 
 CFileOperations::CFileOperations(const QString & filter)
 {
     mFilter = filter;
 }
 
-CFileOperations::~CFileOperations()
-{
+CFileOperations::~CFileOperations() {}
 
+QString    CFileOperations::selectFileForAnalysis(void)
+{
+    /* Select the file */
+    QString filename = QFileDialog::getOpenFileName(nullptr, "", QDir::currentPath(), mFilter) ;
+
+    //QMessageBox::information(nullptr, "", filename);
+    return filename;
 }
 
-void    CFileOperations::selectFilesForAnalysis(void)
+void CFileOperations::readFromFile(CDataContainer & dataContainer)
 {
-    /* Select the file/files */
-    QStringList filenames = QFileDialog::getOpenFileNames(nullptr, "", QDir::currentPath(), mFilter) ;
+    QString selectedFileName = selectFileForAnalysis();
 
-    if(!filenames.isEmpty())
+    QMessageBox::information(nullptr, "Status", "Started loading the file.");
+
+    QFile inputFile(selectedFileName);
+
+    if (inputFile.open(QIODevice::ReadOnly))
     {
-        for (int i = 0;i < filenames.count(); i++)
-            QMessageBox::information(nullptr, "", filenames.at(i));
+       QTextStream in(&inputFile);
+       dataContainer.onNewFile();
+
+       while (!in.atEnd())
+       {
+         QString line = in.readLine();
+         dataContainer.onLineReceived(line);
+       }
+
+       inputFile.close();
     }
 }

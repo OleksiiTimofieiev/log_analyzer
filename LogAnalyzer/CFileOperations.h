@@ -4,6 +4,9 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QDir>
+#include <QTextStream>
+
+#include "CDataContainer.h"
 
 class CFileOperations
 {
@@ -11,10 +14,10 @@ class CFileOperations
         CFileOperations(const QString & filter);
         virtual     ~CFileOperations();
     public:
-        void        selectFilesForAnalysis(void);
+        QString        selectFileForAnalysis(void);
+        void           readFromFile(CDataContainer & dataContainer);
     private:
         QString     mFilter;
-        QStringList mFilenames;
 };
 
 #endif // CFILEOPERATIONS_H
