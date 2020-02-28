@@ -15,16 +15,12 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit MainWindow(CDataContainer & dataContainer, QWidget *parent = nullptr);
     ~MainWindow();
-
 private slots:
-
-
-
     void on_actionOpen_triggered();
+    void on_addFilter_clicked();
 
 private:
     Ui::MainWindow *ui;

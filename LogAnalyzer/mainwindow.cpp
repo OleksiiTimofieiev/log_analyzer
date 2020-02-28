@@ -27,3 +27,12 @@ void MainWindow::on_actionOpen_triggered()
     (fileWasLoaded) ? QMessageBox::information(nullptr, tr("Status"), tr("Loaded the file.")) : QMessageBox::information(nullptr, tr("Status"), tr("File was not selected."));
     dataContainerObserver.printData();
 }
+
+
+
+
+
+void MainWindow::on_addFilter_clicked()
+{
+    qDebug() << "test";
+}
