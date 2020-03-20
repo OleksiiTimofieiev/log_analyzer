@@ -8,6 +8,10 @@
 #include <QColor>
 #include <QColorDialog>
 
+// view => show all with filtered (add all lines) || show filtered (add lines with color);
+// if color is already the same, skip finding step (finding in the string the key string);
+// use lambda, enum class
+
 MainWindow::MainWindow(CDataContainer & container, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),

@@ -23,13 +23,9 @@ public:
 private slots:
     void on_actionOpen_triggered();
     void on_addFilter_clicked();
-
     void on_deleteFilters_clicked();
-
     void on_actionDelete_all_filters_triggered();
-
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
-
     void on_actionAdd_color_triggered();
 
 private:
