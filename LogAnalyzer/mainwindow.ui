@@ -105,6 +105,7 @@ border-image: url(:/rec/Img/images.png)
      <string>Filters</string>
     </property>
     <addaction name="actionDelete_all_filters"/>
+    <addaction name="actionAdd_color"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuFilters"/>
@@ -135,6 +136,11 @@ border-image: url(:/rec/Img/images.png)
    </property>
    <property name="text">
     <string>Delete all filters</string>
+   </property>
+  </action>
+  <action name="actionAdd_color">
+   <property name="text">
+    <string>Add color</string>
    </property>
   </action>
  </widget>

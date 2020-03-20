@@ -30,6 +30,8 @@ private slots:
 
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
+    void on_actionAdd_color_triggered();
+
 private:
     Ui::MainWindow *ui;
     CDataContainer & dataContainerObserver;

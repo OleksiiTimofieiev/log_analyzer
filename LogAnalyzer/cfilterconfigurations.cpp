@@ -37,5 +37,3 @@ void CFilterConfigurations::clear()
 {
     listOfFilters.clear();
 }
-
-// TODO: delete filter

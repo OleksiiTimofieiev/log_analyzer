@@ -70,3 +70,20 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     item->setBackground(color);
     filterConfigurations.setColor(color, item->text());
 }
+
+void MainWindow::on_actionAdd_color_triggered()
+{
+    QColorDialog dialog;
+
+    QColor color = dialog.getColor();
+
+    QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
+
+    foreach(QListWidgetItem * item, items)
+    {
+        item->setBackground(color);
+        filterConfigurations.setColor(color, item->text());
+    }
+
+
+}
