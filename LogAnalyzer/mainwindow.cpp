@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QDebug>
 #include <QThread>
+#include <QInputDialog>
 
 MainWindow::MainWindow(CDataContainer & container, QWidget *parent) :
     QMainWindow(parent),
@@ -28,11 +29,30 @@ void MainWindow::on_actionOpen_triggered()
     dataContainerObserver.printData();
 }
 
-
-
-
-
 void MainWindow::on_addFilter_clicked()
 {
-    qDebug() << "test";
+    bool ok;
+    QString text = QInputDialog::getText(this, tr("Please, type the necessary filter"),
+                                         tr("Filtering string:"), QLineEdit::Normal,
+                                         QDir::home().dirName(), &ok);
+    if (ok && !text.isEmpty())
+    {
+        ui->listWidget->addItem(text);
+        filterConfigurations.addFilter(text);
+    }
+}
+
+void MainWindow::on_deleteFilters_clicked()
+{
+    QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
+
+    foreach(QListWidgetItem * item, items)
+    {
+        delete ui->listWidget->takeItem(ui->listWidget->row(item));
+    }
+}
+
+void MainWindow::on_actionDelete_all_filters_triggered()
+{
+     ui->listWidget->clear();
 }

@@ -27,12 +27,14 @@ CONFIG += c++11
 SOURCES += \
         CDataContainer.cpp \
         CFileOperations.cpp \
+        cfilterconfigurations.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
         CDataContainer.h \
         CFileOperations.h \
+        cfilterconfigurations.h \
         mainwindow.h
 
 FORMS += \

@@ -2,5 +2,6 @@
     <qresource prefix="/rec">
         <file>Img/images.png</file>
         <file>Img/plus.png</file>
+        <file>Img/minus.png</file>
     </qresource>
 </RCC>

@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>30</y>
+      <y>40</y>
       <width>131</width>
       <height>101</height>
      </rect>
@@ -54,6 +54,36 @@ border-image: url(:/rec/Img/images.png)
      </size>
     </property>
    </widget>
+   <widget class="QPushButton" name="deleteFilters">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#deleteFilters
+{
+	background-color: transparent;
+	border-image: url(:/rec/Img/minus.png);
+}
+#deleteFilters::pressed
+{
+border-image: url(:/rec/Img/images.png)
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -61,7 +91,7 @@ border-image: url(:/rec/Img/images.png)
      <x>0</x>
      <y>0</y>
      <width>381</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -70,7 +100,14 @@ border-image: url(:/rec/Img/images.png)
     </property>
     <addaction name="actionOpen"/>
    </widget>
+   <widget class="QMenu" name="menuFilters">
+    <property name="title">
+     <string>Filters</string>
+    </property>
+    <addaction name="actionDelete_all_filters"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuFilters"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -89,6 +126,15 @@ border-image: url(:/rec/Img/images.png)
    </property>
    <property name="text">
     <string>Open</string>
+   </property>
+  </action>
+  <action name="actionDelete_all_filters">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/rec/Img/minus.png</normaloff>:/rec/Img/minus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete all filters</string>
    </property>
   </action>
  </widget>
