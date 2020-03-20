@@ -48,10 +48,13 @@ void MainWindow::on_deleteFilters_clicked()
 {
     QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
 
-    foreach(QListWidgetItem * item, items)
+    if (items.size() > 0)
     {
-        filterConfigurations.deleteFilter(item->text());
-        delete ui->listWidget->takeItem(ui->listWidget->row(item));
+        foreach(QListWidgetItem * item, items)
+        {
+            filterConfigurations.deleteFilter(item->text());
+            delete ui->listWidget->takeItem(ui->listWidget->row(item));
+        }
     }
 }
 
@@ -73,17 +76,18 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
 
 void MainWindow::on_actionAdd_color_triggered()
 {
-    QColorDialog dialog;
-
-    QColor color = dialog.getColor();
-
     QList<QListWidgetItem*> items = ui->listWidget->selectedItems();
 
-    foreach(QListWidgetItem * item, items)
+    if (items.size() > 0)
     {
-        item->setBackground(color);
-        filterConfigurations.setColor(color, item->text());
+        QColorDialog dialog;
+
+        QColor color = dialog.getColor();
+
+        foreach(QListWidgetItem * item, items)
+        {
+            item->setBackground(color);
+            filterConfigurations.setColor(color, item->text());
+        }
     }
-
-
 }
