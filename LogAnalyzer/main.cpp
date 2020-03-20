@@ -1,10 +1,8 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QDesktopWidget>
 
 #include "CFileOperations.h"
-
-// idea: to have during the initialization of the data: the types of filters, rows/cols(defined), default folder to open;
-// create the file
 
 int main(int argc, char *argv[])
 {
@@ -12,6 +10,7 @@ int main(int argc, char *argv[])
 
     CDataContainer dataContainer;
 
+    QDesktopWidget dw;
     MainWindow w(dataContainer);
 
     w.show();

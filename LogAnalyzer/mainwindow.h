@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QListWidgetItem>
 
 #include "CDataContainer.h"
 #include "CFileOperations.h"
@@ -26,6 +27,8 @@ private slots:
     void on_deleteFilters_clicked();
 
     void on_actionDelete_all_filters_triggered();
+
+    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;

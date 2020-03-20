@@ -5,6 +5,8 @@
 #include <QDebug>
 #include <QThread>
 #include <QInputDialog>
+#include <QColor>
+#include <QColorDialog>
 
 MainWindow::MainWindow(CDataContainer & container, QWidget *parent) :
     QMainWindow(parent),
@@ -38,7 +40,7 @@ void MainWindow::on_addFilter_clicked()
     if (ok && !text.isEmpty())
     {
         ui->listWidget->addItem(text);
-        filterConfigurations.addFilter(text);
+        filterConfigurations.addFilter("", text);
     }
 }
 
@@ -48,6 +50,7 @@ void MainWindow::on_deleteFilters_clicked()
 
     foreach(QListWidgetItem * item, items)
     {
+        filterConfigurations.deleteFilter(item->text());
         delete ui->listWidget->takeItem(ui->listWidget->row(item));
     }
 }
@@ -55,4 +58,15 @@ void MainWindow::on_deleteFilters_clicked()
 void MainWindow::on_actionDelete_all_filters_triggered()
 {
      ui->listWidget->clear();
+     filterConfigurations.clear();
+}
+
+void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
+{
+    QColorDialog dialog;
+
+    QColor color = dialog.getColor();
+
+    item->setBackground(color);
+    filterConfigurations.setColor(color, item->text());
 }
